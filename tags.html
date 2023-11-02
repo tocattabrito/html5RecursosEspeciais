@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tags Aside, Section e Nav</title>
+    <style>
+        nav ul{
+            display: flex;
+            list-style: none;
+            margin: 0;
+        }
+        nav ul li a {
+            padding: 10px 15px;
+            color: blue;
+            border-radius: 15px 15px 0 0;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            color: white;
+            background-color: blue;
+        }
+        blockquote {
+            background: #f5f5f5;
+            padding: 15px;
+            margin-left: 0;
+            border-left: royalblue solid 5px;
+        }
+        article time {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!--Nav-->
+        <nav>
+            <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="tel:+558199994-4815">Telefone</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!--Section-->
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        
+        <!--Artico-->
+        <article>
+            <h1>Pratos favoritos</h1>
+            <p>Qual seu prato favorito?</p>
+            <article>
+                <p>É churrasco!</p>
+                <!--Blockquot-->
+                <blockquote>
+                   <p>"Petiscos de Bar é tudo de bom"</p>
+                </blockquote cite="https://www.google.com">
+            </article>
+            <p>Artigo publicado em <time pubdate>31/10/2023 19:00</time></p>
+        </article>
+        <!--Aside-->
+        <aside></aside>
+    </main>
+    <footer></footer>
+</body>
+</html>

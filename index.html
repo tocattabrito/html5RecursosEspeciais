@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos Especiais</title>
+    <style>
+        kbd {
+            border: solid 1px black;
+        }
+        pre {
+            background-color: #f1f1f1;
+
+        }
+        pre > code {
+            color: red;
+        }
+        pre > p {
+            font-style: italic;
+            color: gray;
+            padding-left: 30px;
+        }
+        code {
+            background-color: #f1f1f1;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recursos Especiais</h1>
+    <!--DataList-->
+    Datalist <br>
+    <input list="browsers" type="search" name="search">
+    <datalist id="browsers">
+        <option>Google Chrome</option>
+        <option>Mozila Firefox</option>
+        <option>Microsoft Edge</option>
+        <option>Safari</option>
+        <option>Opera</option>
+    </datalist>
+    
+    <hr>
+    <!--Criando caixa de seleção - SelectBox-->
+    Selectbox <br>
+    <select name="browsers">
+        <option value="">Selecione um Navegador</option>
+        <option value="chrome">Google Chrome</option>
+        <option value="firefox">Mozila Firefox</option>
+        <option value="Edge">Microsoft Edge</option>
+        <option value="safari">Safari</option>
+        <option value="opera">Opera</option>
+    </select>
+    <hr>
+    <br>
+    <h2>Fonte Mono spaces</h2>
+    <p>Para copiar esta informação, pressione <kbd>CTRL</kbd>+<kbd>C</kbd></p>
+    <p>Para trocar o fundo de um elemento, utilize o comando <code>background-color</code></p>
+    <p>Comando completo para alterar cor de fundo: </p>
+        <pre>
+            <p>// Neste momento você aplica forma</p>
+            <code>
+                code {
+                    background-color: #f1f1f1;
+                    color: red;
+                }
+            </code>
+        </pre>
+        <hr>
+        <h2>Tag Datais e Summary</h2>
+        <!--Tag details-->
+        <summary>Como troco a cor de fundo de um elemento no HTML?</summary>
+        <details>
+            <p>Para executar esta ação, utilize o comando <code>background-color </code>no CSS.</p>
+        </details>
+        <hr>
+        <h2>Tags Meter e Progress</h2>
+        <!--Tag  Meter e Progress-->
+        <p>meter</p>
+        <meter max="100" min="0" value="50"></meter>
+        <br>
+        <p>progress</p>
+        <progress></progress>
+
+        <p>progress gradativo</p>
+        <progress id="progress" max="100" min="0" value="0"></progress>
+
+        <script>
+            var progress = document.getElementById("progress");
+            const interval = setInterval(() => {
+                progress.value +=10;
+                if (progress.value >= 100){
+                   // alert('Carregamenton realizado com sucesso')
+                    clearInterval(interval);
+                }
+            }, 1000);
+        </script>
+        <hr>
+        <!--Tag mark e javascript-->
+        <h2>Mark e Javascript</h2>
+        <input type="text" id="busca"> <br>
+        <p id="descricao">
+           Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+           Aperiam explicabo commodi ullam nobis voluptate ipsam enim, necessitatibus ea. 
+           Ut expedita ratione odio officiis unde nobis, optio quos perferendis laboriosam voluptas.
+        </p>
+        <script>
+            var searchField = document.getElementById('busca');
+            var descriptionObject = document.getElementById('descricao');
+            var textToSearch = descriptionObject.innerHTML;
+        
+            function realizaBusca(busca) {
+                const regex = new RegExp(`(${escapeRegExp(busca)})(?!(.(?!<mark))*</mark>)`, 'ig');
+                descriptionObject.innerHTML = textToSearch.replace(regex, '<mark>$1</mark>');
+            }
+        
+            // Função para escapar caracteres especiais na busca
+            function escapeRegExp(string) {
+                return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            }
+        
+            searchField.addEventListener('input', (e) => realizaBusca(e.target.value));
+        </script>
+        <hr>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
